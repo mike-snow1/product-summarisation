@@ -4,9 +4,9 @@ from langchain.llms import OpenAI
 
 
 st.set_page_config(page_title="Product Summarisation", page_icon=":robot:", layout="centered")
-st.header("Global Language Services")
+st.header("Product Summarisation")
 
-st.image(image='logo.png', width=700)
+st.image(image='product.jpg', width=700)
 
 st.markdown("## Please enter your product description")
 
