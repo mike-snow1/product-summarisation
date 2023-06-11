@@ -6,7 +6,7 @@ from langchain.llms import OpenAI
 st.set_page_config(page_title="Product Summarisation", page_icon=":robot:", layout="centered")
 st.header("Product Summarisation")
 
-st.image(image='product.jpg', width=700)
+st.image(image='product.jpg', width=500)
 
 st.markdown("## Please enter your product description")
 
@@ -77,7 +77,6 @@ else:
 st.write("Question:" + " " + text_input)
 
 if text_input:
-    prompt_template = PromptTemplate(input_variables=["query", "option_tone"], template=template)
 
     llm = OpenAI(model_name="text-davinci-003",
                     openai_api_key=st.secrets.OpenAI.key
