@@ -70,7 +70,7 @@ def summarisation(text_input, prompt, model="text-davinci-003"):
 
 
 if length_prompt == 'Short':
-    prompt = """Extract key information from the following text and present each point on a separated line. Each point should be no more than 6 words and there should only be 5 bullet points. 
+    prompt = """Extract key information from the following text and present each point on a separated line that are not numbered. Each point should be no more than 6 words and there should only be 5 bullet points. 
 
     Answer: """
 
