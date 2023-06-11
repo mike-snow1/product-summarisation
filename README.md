@@ -1,6 +1,6 @@
 # Product Summariastion 
 
-![Example Image](logo.png)
+![Example Image](product.jpg)
 
 ## Description
 
