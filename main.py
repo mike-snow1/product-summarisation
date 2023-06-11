@@ -52,7 +52,7 @@ def summarisation(text_input, prompt, model="text-davinci-003"):
     :input product_description: str of product description and good to know
     :input prompt: str of prompt given to model
     """
-    open_ai.api_key = st.secrets.OpenAI.key
+    openai.api_key = st.secrets.OpenAI.key
     
     response = openai.Completion.create(
       model=model,
