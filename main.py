@@ -57,7 +57,7 @@ def summarisation(text_input, prompt, model="text-davinci-003"):
     response = openai.Completion.create(
       model=model,
       prompt=prompt + ': ' + text_input,
-      temperature=0.0,
+      temperature=0.7,
       max_tokens=120,
       top_p=1.0,
       frequency_penalty=0.0,
@@ -71,13 +71,16 @@ def summarisation(text_input, prompt, model="text-davinci-003"):
 
 if length_prompt == 'Short':
     prompt = """Extract key benefits from the following text and order them based on how valuable \
-                  it would be for a customer; each point should be no more than 6 words'
+                  it would be for a customer in bullet points; each point should be no more than 6 words \
+                  and there should only be 5 bullet points'
 
     Answer: """
 
 else:
     prompt = """Extract key benefits from the following text and order them based on how \
-                valuable it would be for a customer
+                valuable it would be for a customer in bullet points
+                
+                
     Answer: """
 
 st.write("Question:" + " " + text_input)
