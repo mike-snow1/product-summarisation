@@ -72,13 +72,13 @@ def summarisation(text_input, prompt, model="text-davinci-003"):
 if length_prompt == 'Short':
     prompt = """Extract key benefits from the following text and order them based on how valuable \
                   it would be for a customer in bullet points; each point should be no more than 6 words \
-                  and there should only be 5 bullet points'
+                  and there should only be 5 bullet points. Each bullet point should be on a separate line.'
 
     Answer: """
 
 else:
     prompt = """Extract key benefits from the following text and order them based on how \
-                valuable it would be for a customer in bullet points
+                valuable it would be for a customer in bullet points. Each bullet point should be on a separate line.
                 
                 
     Answer: """
