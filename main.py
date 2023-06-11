@@ -1,6 +1,9 @@
+import openai
+
 import streamlit as st
-from langchain import PromptTemplate
+
 from langchain.llms import OpenAI
+from langchain import PromptTemplate
 
 
 st.set_page_config(page_title="Product Summarisation", page_icon=":robot:", layout="centered")
