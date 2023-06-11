@@ -6,6 +6,8 @@ from langchain.llms import OpenAI
 from langchain import PromptTemplate
 
 
+
+
 st.set_page_config(page_title="Product Summarisation", page_icon=":robot:", layout="centered")
 st.header("Product Summarisation")
 
@@ -50,6 +52,7 @@ def summarisation(text_input, prompt, model="text-davinci-003"):
     :input product_description: str of product description and good to know
     :input prompt: str of prompt given to model
     """
+    open_ai.api_key = st.secrets.OpenAI.key
     
     response = openai.Completion.create(
       model=model,
@@ -80,11 +83,7 @@ else:
 st.write("Question:" + " " + text_input)
 
 if text_input:
-
-    llm = OpenAI(model_name="text-davinci-003",
-                    openai_api_key=st.secrets.OpenAI.key
-                    )
-
+    
     response = summarisation(text_input, prompt).replace('\n', '')
 
     st.write(response)
