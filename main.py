@@ -110,7 +110,7 @@ if text_input:
                     openai_api_key=st.secrets.OpenAI.key
                     )
 
-    response = llm(template.format(query=text_input, length_tone=length_tone))
+    response = llm(template.format(query=text_input, length_prompt=length_prompt))
     # response = summarisation(text_input, prompt).replace('\n', '')
 
     st.write(response)
