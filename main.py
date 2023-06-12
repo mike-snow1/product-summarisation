@@ -68,7 +68,7 @@ def summarisation(text_input, prompt, model="text-davinci-003"):
     
     return result
 
-if option_prompt == 'Short':
+if length_prompt == 'Short':
     template = """Extract key information from the following text and present each point on a separated line. Each point should be no more than 6 words and there should only be 5 bullet points. Can you translate to result to the chosen language?
 
     Question: {query}
