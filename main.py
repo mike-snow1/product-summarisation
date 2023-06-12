@@ -28,9 +28,9 @@ with col1:
         ('Short', 'Long'))
 
 with col2:
-    option_tone = st.selectbox(
-        'What tone of response would you like?',
-        ('Formal', 'Informal'))
+    option_language = st.selectbox(
+        'Which language would you like?',
+        ('English', 'Swedish', 'French', 'Spanish', 'German'))
 
 def get_text():
     input_text = st.text_area(label="Question", label_visibility='collapsed', placeholder="Please enter the product description...", key="text_input")
@@ -70,16 +70,18 @@ def summarisation(text_input, prompt, model="text-davinci-003"):
 
 
 if length_prompt == 'Short':
-    prompt = """Extract key information from the following text and present each point on a separated line. Each point should be no more than 6 words and there should only be 5 bullet points. 
+    prompt = """Extract key information from the following text and present each point on a separated line. Each point should be no more than 6 words and there should only be 5 bullet points. Can you translate to result to the chosen language?
 
     Tone: Tone: {option_tone}
+    Language: {option_language}
     
     Answer: """
 
 else:
-    prompt = """Extract key benefits from the following text and order them based on how valuable it would be for a customer in bullet points. Each bullet point should be on a separate line.
+    prompt = """Extract key benefits from the following text and order them based on how valuable it would be for a customer in bullet points. Each bullet point should be on a separate line. Can you translate to result to the chosen language?
                 
     Tone: {option_tone}
+    Language: {option_language}
     
     Answer: """
 
