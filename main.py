@@ -68,27 +68,49 @@ def summarisation(text_input, prompt, model="text-davinci-003"):
     
     return result
 
+if option_prompt == 'Short':
+    template = """Extract key information from the following text and present each point on a separated line. Each point should be no more than 6 words and there should only be 5 bullet points. Can you translate to result to the chosen language?
 
-if length_prompt == 'Short':
-    prompt = """Extract key information from the following text and present each point on a separated line. Each point should be no more than 6 words and there should only be 5 bullet points. Can you translate to result to the chosen language?
-
-    Tone: Tone: {option_tone}
+    Question: {query}
     Language: {option_language}
-    
+
     Answer: """
 
-else:
-    prompt = """Extract key benefits from the following text and order them based on how valuable it would be for a customer in bullet points. Each bullet point should be on a separate line. Can you translate to result to the chosen language?
+else option_prompt:
+    template = """Extract key benefits from the following text and order them based on how valuable it would be for a customer in bullet points. Each bullet point should be on a separate line. Can you translate to result to the chosen language?
+
+    Question: {query}
+    Tone: {option_language}
+
+    Answer: """
+
+
+# if length_prompt == 'Short':
+#     prompt = """Extract key information from the following text and present each point on a separated line. Each point should be no more than 6 words and there should only be 5 bullet points. Can you translate to result to the chosen language?
+
+#     Tone: Tone: {option_tone}
+#     Language: {option_language}
+    
+#     Answer: """
+
+# else:
+#     prompt = """Extract key benefits from the following text and order them based on how valuable it would be for a customer in bullet points. Each bullet point should be on a separate line. Can you translate to result to the chosen language?
                 
-    Tone: {option_tone}
-    Language: {option_language}
+#     Tone: {option_tone}
+#     Language: {option_language}
     
-    Answer: """
+#     Answer: """
 
 st.write("Summarised text:")
 
 if text_input:
-    
-    response = summarisation(text_input, prompt).replace('\n', '')
+    prompt_template = PromptTemplate(input_variables=["query", "option_language"], template=template)
+
+    llm = OpenAI(model_name="text-davinci-003",
+                    openai_api_key=st.secrets.OpenAI.key
+                    )
+
+    response = llm(template.format(query=text_input, option_tone=option_tone))
+    # response = summarisation(text_input, prompt).replace('\n', '')
 
     st.write(response)
