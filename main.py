@@ -76,7 +76,7 @@ if option_prompt == 'Short':
 
     Answer: """
 
-else option_prompt:
+else:
     template = """Extract key benefits from the following text and order them based on how valuable it would be for a customer in bullet points. Each bullet point should be on a separate line. Can you translate to result to the chosen language?
 
     Question: {query}
