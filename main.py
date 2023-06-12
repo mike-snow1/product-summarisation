@@ -83,7 +83,7 @@ else:
     
     Answer: """
 
-st.write("Question:" + " " + text_input)
+st.write("Summarised text:")
 
 if text_input:
     
