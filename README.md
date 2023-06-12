@@ -1,4 +1,6 @@
-# Product Name
+# Product Summariastion 
+
+![Example Image](product.jpg)
 
 ## Description
 
