@@ -73,7 +73,7 @@ if length_prompt == 'Short':
     Each point should be no more than 4 words. Can you translate to result to the chosen language? 
     Can you rank how important these features are to the product using the context?
 
-    Context: Mattresses have important features like a warranty, springs, and coils.
+    Context: An oven has important features such as preset cooking programs, touch control, and easy installation.
     Question: {query}
     Language: {option_language}
 
