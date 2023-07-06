@@ -69,9 +69,8 @@ def summarisation(text_input, prompt, model="text-davinci-003"):
     return result
 
 if length_prompt == 'Short':
-    template = """Extract key information from the following text and present each point on a separated line. 
+    template = """Extract key information from the following text and present each point on a separated line ranked how important these features are to the product using the context. 
     Each point should be no more than 4 words. Can you translate to result to the chosen language? 
-    Can you rank how important these features are to the product using the context?
 
     Context: An oven has important features such as preset cooking programs, touch control, and easy installation.
     Question: {query}
